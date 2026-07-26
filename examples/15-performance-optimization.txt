@@ -1,0 +1,17 @@
+This endpoint is taking 4 to 6 seconds normally and timing out under
+heavy load:
+
+@router.get("/dashboard-summary")
+def dashboard_summary(db: Session = Depends(get_db)):
+    orders = db.query(Order).all()
+    result = []
+    for order in orders:
+        customer = db.query(Customer).filter(Customer.id == order.customer_id).first()
+        items = db.query(OrderItem).filter(OrderItem.order_id == order.id).all()
+        result.append({"order": order, "customer": customer, "items": items})
+    return result
+
+We've got around 50k orders, 200k order items, 8k customers. Can you
+tell me what's causing this and rewrite it so it's fast at our
+current scale and won't fall over as we grow? Quick explanation of
+the bottleneck first, then the fixed code.

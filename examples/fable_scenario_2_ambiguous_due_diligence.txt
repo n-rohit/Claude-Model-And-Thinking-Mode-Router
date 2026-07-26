@@ -1,0 +1,22 @@
+One of our banking clients is planning to buy a smaller regional
+lender, and their board asked us to independently verify the target's
+financial health before anyone signs anything.
+
+The client has handed over five years of financial statements, board
+meeting minutes, and letters exchanged with their central bank about
+past compliance findings. They want us to go through all of it and
+tell them:
+1. Whether the target's reported numbers actually line up year over
+   year, or if there are unexplained swings worth asking about
+2. Any pattern in the central bank correspondence that suggests
+   recurring problems rather than one-off issues
+3. Whether the target's loan book looks concentrated in a way that
+   could be risky if one sector has a bad year
+4. What we'd flag as a dealbreaker versus something that's just worth
+   a lower purchase price
+
+This needs to hold up if the client's board asks hard questions in the
+approval meeting, so every conclusion should point back to something
+specific in the documents, not a general impression. If the numbers
+genuinely look clean, say so plainly rather than manufacturing
+concerns to seem thorough.

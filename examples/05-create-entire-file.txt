@@ -1,0 +1,17 @@
+Our project structure looks like this:
+
+app/routers/users.py
+app/routers/invoices.py
+app/models/invoice.py
+app/db.py
+
+Every router follows the same pattern - APIRouter, a DB session
+dependency, Pydantic response models, HTTPException for 404s.
+
+Can you create a new app/routers/payments.py with:
+1. POST /payments to create a payment record
+2. GET /payments/{id} to fetch one
+3. GET /payments?invoice_id= to list payments for an invoice
+
+Match the same style and conventions as invoices.py. Just give me the
+full file.

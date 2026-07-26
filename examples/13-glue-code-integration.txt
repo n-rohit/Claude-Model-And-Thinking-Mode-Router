@@ -1,0 +1,14 @@
+Need to receive webhooks from our payment provider, it's Stripe-like -
+sends a signed POST with an event type and payload - and update our
+Payment records based on that.
+
+Can you write a FastAPI endpoint, POST /webhooks/payment-provider,
+that:
+1. Verifies the signature using a shared secret, HMAC-SHA256, header
+   is X-Signature
+2. Handles payment.succeeded, payment.failed, and payment.refunded,
+   and updates the matching Payment row
+3. Returns 200 quickly and does anything slower, like sending a
+   confirmation email, as a background task instead of inline
+
+Give me the endpoint code plus the signature verification helper.

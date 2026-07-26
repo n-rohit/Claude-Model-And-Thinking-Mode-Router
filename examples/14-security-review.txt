@@ -1,0 +1,14 @@
+Need to review our JWT auth flow before a client audit. Attaching
+auth/login.py, auth/tokens.py, and middleware/auth_middleware.py as
+separate docs.
+
+Can you go through:
+1. How tokens are generated - algorithm, secret handling, expiry
+2. How they're stored and transmitted - cookie flags, headers
+3. Refresh token handling and revocation
+4. Password handling - hashing, timing attacks
+5. Any injection or privilege escalation risk in the middleware
+
+For anything you find, rate it critical, high, medium, or low, and
+tell me exactly how to fix it, not just "follow best practices." Give
+me a findings table and then a prioritized list of what to do first.

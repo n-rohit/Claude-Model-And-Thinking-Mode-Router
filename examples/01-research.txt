@@ -1,0 +1,15 @@
+I need to add a step to our pipeline that pulls text and tables out of
+vendor PDFs, some scanned and some native. We don't have anything for
+this yet.
+
+Can you research and compare pdfplumber, PyMuPDF, and unstructured for
+this? Look at:
+1. Table extraction accuracy on multi-column layouts
+2. Performance on large files, 100+ pages
+3. Whether they handle scanned/image PDFs or need OCR added separately
+4. How actively maintained each one is
+5. Licensing
+
+Give me a short comparison and tell me which one you'd pick and why.
+Flag if any of them would need something like Tesseract added for the
+scanned PDFs.

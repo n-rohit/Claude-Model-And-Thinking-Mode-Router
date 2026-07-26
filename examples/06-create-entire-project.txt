@@ -1,0 +1,16 @@
+Starting a new internal tool - a small dashboard for tracking support
+tickets. Our usual stack is React with Vite, FastAPI, Postgres, and
+Docker for local dev.
+
+Can you scaffold this out for me:
+1. A frontend folder with a Vite React app, one page listing tickets
+   from the API
+2. A backend folder with FastAPI, a /tickets CRUD endpoint, SQLAlchemy
+   models, Alembic set up
+3. A docker-compose.yml with postgres, backend, and frontend so I can
+   bring it all up with one command
+4. A basic .env.example, .gitignore, and a README with setup steps
+
+Keep it minimal, no auth yet, just get one working end-to-end CRUD
+flow. Show me the file tree first, then the full contents of each
+file.

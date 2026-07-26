@@ -1,0 +1,12 @@
+This function has a bug:
+
+def get_page_slice(items, page, page_size):
+    start = page * page_size
+    end = start + page_size
+    return items[start:end]
+
+Page numbers are 1-indexed in the UI but this treats them as 0-indexed,
+so page 1 skips the first page_size items.
+
+Can you just fix this one function so page 1 returns the right slice?
+Don't touch anything else.

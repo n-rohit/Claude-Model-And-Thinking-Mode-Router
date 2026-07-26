@@ -1,0 +1,7 @@
+Bank statement notes, June:
+
+2026-06-02  Wire transfer in     12,500
+2026-06-05  Vendor payment       -3,200
+2026-06-11  Vendor payment       -3,200
+2026-06-18  Bank fee             -45
+2026-06-25  Client payment       8,900

@@ -1,0 +1,16 @@
+We're moving from one database per client to a shared multi-tenant
+model with a tenant_id column on every tenant-scoped table, around 15
+tables total, mainly to cut down on infra overhead.
+
+Can you help me think through the migration:
+1. Which tables actually need tenant_id and what type/constraints
+   make sense
+2. How to index things so tenant-scoped queries stay fast at scale
+3. How to backfill tenant_id on existing data without downtime
+4. Whether we should enforce row-level security at the DB layer so
+   we're not just relying on the application layer
+5. What the rollback plan looks like if something goes wrong
+   mid-migration
+
+I don't need the actual SQL yet, just walk me through the plan as a
+step by step rollout, and flag whichever steps are riskiest.

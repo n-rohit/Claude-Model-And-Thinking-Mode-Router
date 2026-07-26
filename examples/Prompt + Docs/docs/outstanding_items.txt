@@ -1,0 +1,4 @@
+Outstanding items, June:
+1. Vendor payment of 3,200 recorded twice in the bank feed, on 2026-06-05 and 2026-06-11
+2. Client payment of 8,900 on 2026-06-25 not yet matched to an invoice
+3. Bank fee of 45 not yet booked in the ledger

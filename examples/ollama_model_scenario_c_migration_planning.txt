@@ -1,0 +1,30 @@
+We're bringing on a new banking client who currently runs everything
+on a legacy on-premise system, and we need to move their chart of
+accounts, their general ledger entry flows, and their existing
+matching rules into our platform.
+
+Some context: they have about 40,000 historical transactions going
+back six years, and their regulator requires that historical records
+stay traceable after the move, meaning we can't just drop the old
+numbering scheme. We need a way to map old account codes to new ones
+and keep that mapping available for anyone who looks up an old
+transaction later.
+
+Can you help me think through how we'd approach this move? Specifically:
+1. What order should we move things in, so that nothing breaks
+   halfway through, like moving accounts before the entries that
+   reference them
+2. How do we check that every single historical transaction landed
+   correctly after the move, not just a sample
+3. What happens if we find a problem three days after go-live, do we
+   have a way to undo just the affected pieces without undoing
+   everything
+4. Their existing matching rules use some assumptions our system
+   doesn't support directly, like matching on a free-text memo field,
+   so what's a reasonable way to handle those cases that won't just
+   get silently dropped
+5. What should we tell the client's finance lead about the timeline
+   and what they need to prepare on their end before we start
+
+I don't need actual code yet, just a clear plan I can walk the client
+through and get their sign-off on before we schedule anything.

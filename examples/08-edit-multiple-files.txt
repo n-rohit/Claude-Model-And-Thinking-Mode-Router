@@ -1,0 +1,15 @@
+We're renaming client_id to customer_id everywhere for consistency. It
+shows up in:
+1. models/invoice.py, the SQLAlchemy model
+2. schemas/invoice.py, the Pydantic schemas
+3. routers/invoices.py, query params and filters
+4. frontend/src/api/invoices.ts, the TS interface and API calls
+
+Can you make this rename consistent across all of those? Also
+generate a new Alembic migration for the column rename, don't touch
+the old migrations. And flag anywhere this could break a stored
+query, index, or an external API contract, since a name-only change
+might miss something like that.
+
+Give me each file clearly labeled, and let me know if you're doing a
+full file or just the changed lines for each one.

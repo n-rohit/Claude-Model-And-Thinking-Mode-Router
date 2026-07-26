@@ -1,0 +1,13 @@
+Bunna Bank's board is reviewing whether to approve our expansion into
+their new Kenya and Rwanda subsidiaries next quarter, and they've asked
+for a definitive analysis of our compliance approach across all three
+countries before they'll sign off on the budget.
+
+Each country's central bank has different reporting requirements, and
+the board specifically wants to know where our current module already
+covers what each regulator expects, and where we'd need real
+customization before go-live in each country.
+
+Can you put together the analysis they're asking for? I want something
+solid enough that I can present it directly in their board meeting
+without having to caveat half of it.

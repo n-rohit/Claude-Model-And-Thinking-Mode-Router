@@ -1,0 +1,27 @@
+We're about to go live with our banking ERP for a client that operates
+in three countries at once, and they want all three country teams
+cutting over on the same weekend so their reporting stays synchronized
+across the group from day one.
+
+Each country's finance team follows different local accounting rules,
+and the central teams in two of the three countries have already told
+us their staff won't be available to troubleshoot anything after
+Saturday evening because of local holidays that weekend.
+
+Can you help me think through:
+1. What order the country teams should go live in, if we can't
+   actually do all three at the exact same moment, so no team is left
+   in a broken state waiting on another
+2. What we tell each country's finance lead they need to check
+   themselves before we consider their cutover successful, given the
+   differences in their local rules
+3. What our rollback options actually look like for a country that's
+   mid-cutover when the holiday deadline hits, versus one that hasn't
+   started yet
+4. How we keep the three teams' data lined up with each other during
+   the transition, since delaying even one country by a day could
+   throw off the group-level numbers everyone's expecting on Monday
+
+I don't need the technical steps yet, I need the sequencing plan
+itself to be solid enough that I can walk the client's regional
+director through it and get sign-off before we lock in the weekend.

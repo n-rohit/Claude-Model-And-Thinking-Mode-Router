@@ -1,0 +1,12 @@
+I'm pasting our reports.py file below, about 180 lines. It uses
+synchronous psycopg2 calls directly inside the route handlers, which
+is blocking the event loop under load.
+
+[paste the full file here]
+
+Can you rewrite the whole file to use asyncpg or SQLAlchemy's async
+engine, whichever fits our patterns better - your call, just tell me
+which one and why. Keep every function's signature and behavior
+exactly the same, this is an internals change, not a feature change.
+Add a quick comment anywhere the control flow had to change
+meaningfully to go async.

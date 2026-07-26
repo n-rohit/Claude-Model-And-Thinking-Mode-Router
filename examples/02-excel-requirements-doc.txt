@@ -1,0 +1,18 @@
+Client is implementing our ERP module on top of their existing process.
+I've attached their current workflow notes and our module's feature
+list as separate docs.
+
+Can you put together a requirements gap-analysis with these columns:
+1. Requirement
+2. Client current process
+3. Our module coverage
+4. Gap type - fully supported, config only, config plus custom dev, or
+   full custom dev
+5. Notes
+
+Group it by functional area like procurement, inventory, finance. Keep
+the notes specific, not vague stuff like "should work fine." If
+something needs custom dev, give me a rough sense of the scope.
+
+Send it back as a table I can paste straight into a spreadsheet, one
+table per functional area.

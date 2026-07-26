@@ -1,0 +1,14 @@
+Reviewing a PR that adds rate limiting to our public API, pasting the
+diff below, about 120 lines across 3 files.
+
+[paste the diff here]
+
+Can you check it for:
+1. Correctness bugs
+2. Security issues, especially how the rate-limit key gets derived
+3. Edge cases it might be missing, like missing headers or clock skew
+4. Anything inconsistent with how the rest of the codebase is styled
+
+Don't rewrite it, just point out specific lines or functions and
+explain the issue and what you'd do instead. Give me an overall
+verdict too - approve, approve with comments, or request changes.

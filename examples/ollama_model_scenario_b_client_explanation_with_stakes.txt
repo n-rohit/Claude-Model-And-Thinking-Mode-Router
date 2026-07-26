@@ -1,0 +1,23 @@
+One of our banking implementation clients called today because their
+finance team doesn't fully understand how the automated matching
+between bank statement lines and their ledger entries works in the
+new module. They're worried because their external reviewers are
+coming in next quarter, and they want to be able to explain the
+matching logic clearly if asked.
+
+Can you write them an explanation, in plain non-technical language,
+covering:
+1. How the system decides two entries are a match, and what fields it
+   compares
+2. What happens when nothing matches automatically, and how staff
+   should handle it
+3. How someone can pull up the history of a specific match later and
+   see exactly why the system paired those two entries
+4. What controls exist to stop someone from marking a mismatch as
+   resolved without actually looking into it
+
+This needs to be solid enough that their finance team can hand it
+directly to the reviewers without us being in the room, so please
+make sure nothing in the explanation is vague or hand-wavy. If there
+is a real limitation in how the matching works today, say so plainly
+rather than making it sound more capable than it is.

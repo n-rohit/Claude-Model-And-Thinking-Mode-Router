@@ -1,0 +1,10 @@
+I've got a file, services/reconciliation.py, with 4 functions and no
+docstrings. Pasting the function names and signatures below.
+
+[paste the signatures here]
+
+Can you add clear docstrings to each one - Google style, purpose,
+args, return value, any exceptions. Don't change any of the actual
+logic. Then write a short README section explaining what this module
+does and how the functions fit together, aimed at a new engineer
+joining the team.

@@ -1,0 +1,8 @@
+Can you look at the attached bank reconciliation notes and the
+outstanding items list, and then:
+1. Point out any transactions that show up in one but not the other
+2. Flag anything that looks like a duplicate entry
+3. Summarize the discrepancies in a short table
+
+This is for a client review, so cross-reference carefully and explain
+your reasoning for each flagged item.

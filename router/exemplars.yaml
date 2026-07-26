@@ -1,0 +1,41 @@
+# ============================================================
+# Exemplar prompts per tier, used by the semantic layer to score
+# similarity. Add your own real prompts here as you use the
+# router — a handful of accurate, tier-labeled real examples will
+# improve accuracy far more than tweaking thresholds.
+# ============================================================
+
+haiku:
+  - "Fix the grammar and spelling in this paragraph."
+  - "What is the capital of France?"
+  - "Convert this list of names into a numbered list."
+  - "Rewrite this sentence to be more concise."
+  - "Translate this short phrase into Spanish."
+  - "Give me a one-sentence summary of this text."
+  - "Rename these variables to be more descriptive."
+  - "Format this text as a markdown table."
+
+sonnet:
+  - "Write a professional email to a client explaining a delay in project delivery."
+  - "Explain how database indexing works, with a couple of examples."
+  - "Review this Python function and suggest improvements."
+  - "Draft a project plan for a two-week feature rollout."
+  - "Summarize this article in a few paragraphs, highlighting the key arguments."
+  - "Help me debug why this API call is returning a 400 error."
+  - "Write a short blog post about the benefits of remote work."
+  - "Compare these two approaches and recommend one, with reasoning."
+
+opus:
+  - "Analyze these three quarterly financial reports, identify inconsistencies across them, and produce a synthesized recommendation with supporting evidence."
+  - "Refactor this large codebase module, considering backward compatibility, performance implications, and test coverage across all edge cases."
+  - "Perform a comprehensive competitive analysis across five companies using the attached financial documents and produce strategic recommendations."
+  - "Reconcile these bank statements against the general ledger entries and flag every discrepancy with a root-cause explanation."
+  - "Design a multi-tenant database schema for a banking ERP module, covering compliance, auditability, and scalability trade-offs."
+  - "Cross-reference these contract documents for conflicting clauses and produce a risk report with recommended amendments."
+
+fable:
+  - "Conduct a full multi-jurisdiction regulatory compliance review across every banking entity we operate in, cross-referencing years of transaction history against each jurisdiction's current AML rules, and produce a board-ready report with a complete audit trail."
+  - "Plan and validate a complete core-banking platform migration for a client with decades of historical records, including a regulator-facing traceability guarantee, a full pre-cutover verification strategy for every single historical transaction, and a detailed rollback plan for a partial failure mid-migration."
+  - "Produce a definitive, exhaustive security and compliance audit of our entire authentication and authorization system across all client-facing modules, suitable for handing directly to an external regulator with no further review needed from us."
+  - "Synthesize five years of financial statements, board minutes, and regulatory correspondence across all three subsidiary entities into a single definitive due-diligence report for an acquisition, flagging every material risk with supporting citations."
+  - "Design and fully document a multi-year, multi-country data-residency and compliance architecture for a bank operating across six regulatory jurisdictions simultaneously, accounting for conflicting local requirements."

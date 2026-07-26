@@ -1,0 +1,15 @@
+Getting an intermittent 500 on POST /invoices. Here's the stack trace:
+
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation)
+duplicate key value violates unique constraint "invoices_number_key"
+DETAIL: Key (number)=(INV-2026-0417) already exists.
+
+And the relevant code:
+
+def generate_invoice_number():
+    last = db.query(Invoice).order_by(Invoice.id.desc()).first()
+    next_num = (last.sequence if last else 0) + 1
+    return f"INV-{datetime.now().year}-{next_num:04d}"
+
+Can you explain why this happens intermittently and fix it so the
+numbers stay unique even under concurrent requests?

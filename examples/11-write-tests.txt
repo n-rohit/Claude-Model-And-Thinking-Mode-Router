@@ -1,0 +1,11 @@
+Here's a function from utils/discount.py:
+
+def apply_discount(price: float, percent: float) -> float:
+    if not (0 <= percent <= 100):
+        raise ValueError("percent must be between 0 and 100")
+    return round(price * (1 - percent / 100), 2)
+
+We use pytest. Can you write a solid test suite for this - normal
+cases, boundary values like 0% and 100%, invalid input, and floating
+point rounding edge cases. Just give me the full test file ready to
+drop into tests/.

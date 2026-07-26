@@ -1,0 +1,123 @@
+# ============================================================
+# Model Router Configuration
+# Edit this file to retune behavior without touching any code.
+# ============================================================
+
+# Tier -> actual Anthropic model string to recommend
+tiers:
+  haiku:  claude-haiku-4-5-20251001
+  sonnet: claude-sonnet-5
+  opus:   claude-opus-4-8
+  fable:  claude-fable-5
+
+# --- Rule layer -----------------------------------------------
+# Hard overrides for the obvious cases. If a rule fires, the
+# semantic/tiebreak layers are skipped entirely.
+#
+# Fable is Anthropic's Mythos-class tier, priced well above Opus and
+# meant for genuinely extreme, long-horizon work — not just "longer
+# than usual." Its thresholds here are deliberately set high, above
+# the Opus thresholds, so it's reserved for real edge cases rather
+# than routine complex work. Budget isn't the constraint driving this —
+# it's about not reaching for the heaviest tool by default.
+rules:
+  # Below this combined word count, with no docs and no code,
+  # it's almost always a simple task -> haiku.
+  haiku_max_words: 60
+  haiku_max_docs: 0
+
+  # Above this combined word count, or this many attached docs,
+  # or this many code fences, treat it as heavy -> opus.
+  opus_min_words: 1500
+  opus_min_docs: 4
+  opus_min_code_fences: 3
+
+  # Above THESE (higher) thresholds, or if a fable-signal keyword is
+  # present, treat it as extreme -> fable. Checked before the opus
+  # rules, since fable is the more extreme case.
+  fable_min_words: 4000
+  fable_min_docs: 8
+  fable_min_code_fences: 6
+
+  # A light-task keyword match (see keywords.light_task below) counts as
+  # haiku even above haiku_max_words, up to this ceiling.
+  light_keyword_max_words: 180
+
+# --- Semantic layer ---------------------------------------------
+semantic:
+  # fastembed model id (small, CPU-friendly, no GPU/PyTorch needed)
+  embedding_model: "BAAI/bge-small-en-v1.5"
+  exemplars_file: "router/exemplars.yaml"
+  # Only the prompt text is embedded (not full document bodies) —
+  # document *volume* is handled by the rule layer / features instead.
+  max_chars_embedded: 2000
+  # If the gap between the top-scoring tier and the runner-up is
+  # below this, the call is "ambiguous" and gets escalated to the
+  # offline LLM tiebreaker instead of trusting the embedding alone.
+  # This is a fraction (0.04 = 4%). It's purely internal now — used to
+  # decide whether to trust the semantic layer or escalate to the offline
+  # LLM, but never displayed. The terminal only shows a "Confidence" field
+  # when the LLM itself was asked and gave one (0-100, self-reported).
+  confidence_gap_threshold: 0.04
+
+# --- Offline LLM tiebreaker (Ollama) -----------------------------
+tiebreak:
+  enabled: true
+  ollama_host: "http://localhost:11434"
+  model: "phi4-mini"
+  timeout_seconds: 30
+  # Used only if Ollama is unreachable or errors out.
+  fallback_tier: "sonnet"
+
+# --- Effort level (second output dimension, independent of tier) --
+# Real Claude feature: the same model can be told to reason more or
+# less before answering (low/medium/high/xhigh). This lets a task that
+# only marginally needed a heavier tier stay on the lighter model at
+# higher effort instead, rather than always jumping tiers to compensate.
+# Used for rule/semantic/tiebreak-fallback decisions — when the Ollama
+# tiebreaker succeeds, its own self-reported effort is used instead.
+effort:
+  medium_min_words: 150
+  high_min_words: 600
+  xhigh_min_words: 1200
+  high_min_list_items: 4
+  xhigh_min_list_items: 8
+  # Any heavy-task or fable-signal keyword bumps effort to at least "high".
+  keyword_bump: true
+  # xhigh isn't meaningful/available on every tier as of this writing —
+  # update this list if Anthropic's per-model effort support changes.
+  tiers_supporting_xhigh: [sonnet, opus, fable]
+
+# --- Keyword signals (used by the rule/feature layer) -------------
+keywords:
+  # Signals genuinely extreme, long-horizon, maximum-stakes work —
+  # meant to be rare triggers, not everyday complex-work language.
+  fable_task:
+    - "days-long"
+    - "multi-day"
+    - "multi-jurisdiction"
+    - "regulatory filing"
+    - "board-ready"
+    - "definitive analysis"
+    - "cannot afford to be wrong"
+    - "exhaustive review"
+  heavy_task:
+    - "refactor"
+    - "audit"
+    - "cross-reference"
+    - "synthesize"
+    - "reconcile"
+    - "multi-step"
+    - "comprehensive"
+    - "end-to-end"
+    - "architecture"
+  light_task:
+    - "fix typo"
+    - "one sentence"
+    - "quick"
+    - "rename"
+    - "format this"
+    - "translate this word"
+
+logging:
+  log_file: "routing_log.jsonl"

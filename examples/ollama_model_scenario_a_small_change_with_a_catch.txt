@@ -1,0 +1,19 @@
+Our client for the Odoo project asked for a small change on their
+invoice approval screen. Right now the Submit button is blue, and
+their brand guidelines want it changed to green to match their new
+logo.
+
+While we're in there, they also mentioned a few related things:
+1. The button should keep the same size and padding, just the color
+2. There are two other screens, the purchase approval screen and the
+   expense approval screen, that use the same button component, and
+   they want those updated too for consistency
+3. They want to confirm the new green still meets accessibility
+   contrast standards against the white background, since their last
+   vendor got flagged for this during a compliance review
+
+Can you make these changes and let me know if the contrast check
+passes, or if we need a slightly different shade of green? I don't
+want to go back and forth with them more than once on this, so please
+just tell me the final hex code you used and why it passes, in a way
+I can quote back to the client if they ask.

@@ -1,0 +1,13 @@
+I need an architecture diagram for a design review. It should show how
+our services connect - React frontend, FastAPI backend, PostgreSQL
+database, a background worker for report generation, and an external
+payment gateway.
+
+Can you generate this as draw.io XML so I can import it straight into
+diagrams.net? Please:
+1. Label each component clearly
+2. Show the direction of the arrows for request/data flow
+3. Add a short label on each arrow saying what's being sent, like
+   REST/JSON, SQL, webhook
+
+Just give me the full .drawio file contents so I can save it directly.
