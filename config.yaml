@@ -4,10 +4,20 @@
 # ============================================================
 
 # Tier -> actual Anthropic model string to recommend
+#
+# Opus 5 (released 2026-07-24) superseded Opus 4.8 at the same price
+# ($5/$25 per MTok) with a large capability jump — near-Fable performance
+# on many benchmarks, still behind it on some (e.g. legal/health evals).
+# Since it's strictly better at the same cost, it replaces 4.8 here
+# outright rather than becoming a new in-between tier.
+#
+# Claude Mythos 5 is deliberately NOT included — it's still restricted to
+# Anthropic's Project Glasswing trusted-access partners, not something a
+# general account (even Enterprise) can call via the API.
 tiers:
   haiku:  claude-haiku-4-5-20251001
   sonnet: claude-sonnet-5
-  opus:   claude-opus-4-8
+  opus:   claude-opus-5
   fable:  claude-fable-5
 
 # --- Rule layer -----------------------------------------------

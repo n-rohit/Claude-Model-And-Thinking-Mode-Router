@@ -9,11 +9,17 @@ It never calls the Anthropic API to make the decision — routing is done
 entirely with local rules, local embeddings, and (for genuinely ambiguous
 cases only) a local offline LLM via Ollama.
 
-**On Fable:** Claude Fable 5 is Anthropic's Mythos-class tier, priced
-well above Opus and meant for genuinely extreme, long-horizon work. It's
-included here, but deliberately gated behind higher thresholds than
-Opus — the goal isn't to avoid its cost, it's to reach for the heaviest
-tool only when a task actually needs it, not by default.
+**On Opus and Fable:** Claude Opus 5 (released 2026-07-24) superseded
+Opus 4.8 at the same price, with near-Fable performance on many
+benchmarks. Claude Fable 5 remains Anthropic's Mythos-class tier above
+it — priced roughly double Opus and meant for genuinely extreme,
+long-horizon work. Both are included here, with Fable deliberately
+gated behind higher thresholds than Opus — the goal isn't to avoid its
+cost, it's to reach for the heaviest tool only when a task actually
+needs it, not by default. Claude Mythos 5 (the other Mythos-class
+model) is intentionally excluded — it's still restricted to Anthropic's
+Project Glasswing trusted-access partners, not something a general
+account can call.
 
 ## The rules, in plain terms
 
